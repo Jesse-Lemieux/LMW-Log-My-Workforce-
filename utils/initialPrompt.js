@@ -20,6 +20,12 @@ module.exports.init = () => {
                     'Add a role.',
                     'Add an employee.',
                     'Update an employee role.',
+                    'Update an employee manager',
+                    'View employees by department',
+                    'Delete a department',
+                    'Delete a role',
+                    'Delete an employee',
+                    'View department budgets',
                     'Exit']
        }
     ])
@@ -43,8 +49,26 @@ module.exports.init = () => {
             add.addEmployee()
          }
          if (answer.init === 'Update an employee role.'){
-            return console.log('success')
+          
          }
+         if (answer.init === 'Update an employee manager'){
+          
+        }
+        if (answer.init === 'View employees by department'){
+          
+        }
+        if (answer.init === 'Delete a department'){
+          
+        }
+        if (answer.init === 'Delete a role'){
+          
+        }
+        if (answer.init === 'Delete an employee'){
+          
+        }
+        if (answer.init === 'View department budgets'){
+          
+        }
          if (answer.init === 'Exit'){
             console.log('Goodbye')
             process.exit()
