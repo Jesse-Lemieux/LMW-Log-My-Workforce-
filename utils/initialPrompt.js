@@ -34,30 +34,13 @@ module.exports.init = () => {
             view.viewEmployees()
          }
          if (answer.init === 'Add a department.'){
-            return inquirer.prompt([
-                {
-                    name: "name",
-                    type: "input",
-                    message: "What is the department name?",
-                    validate: nameInput => {
-                        if (nameInput) {
-                          return true;
-                        } else {
-                          console.log('You need to enter a department name!');
-                          return false;
-                        }
-                    }
-                }
-            ])
-            .then(answer=>{
-                add.addDepartment(answer)
-            })
+            add.addDepartment()
          }
          if (answer.init === 'Add a role.'){
-            return console.log('success')
+            add.addRole()
          }
          if (answer.init === 'Add an employee.'){
-            return console.log('success')
+            add.addEmployee()
          }
          if (answer.init === 'Update an employee role.'){
             return console.log('success')
