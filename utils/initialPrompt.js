@@ -3,6 +3,7 @@ const db = require('../db/connection')
 const view = require('./viewTables')
 const add = require('./addTable')
 const update = require('./updateTable')
+const deleteFunc = require('./delete')
 
 module.exports.init = () => {
     db.connect(err => {
@@ -56,16 +57,16 @@ module.exports.init = () => {
             update.updateManager();
         }
         if (answer.init === 'View employees by department'){
-          
+            view.viewEmployeeDepartment();
         }
         if (answer.init === 'Delete a department'){
-          
+            deleteFunc.deleteDepartment();
         }
         if (answer.init === 'Delete a role'){
-          
+            deleteFunc.deleteRole();
         }
         if (answer.init === 'Delete an employee'){
-          
+            deleteFunc.deleteEmployee();
         }
         if (answer.init === 'View department budgets'){
           
