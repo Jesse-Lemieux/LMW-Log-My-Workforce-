@@ -2,6 +2,7 @@ const inquirer = require('inquirer')
 const db = require('../db/connection')
 const view = require('./viewTables')
 const add = require('./addTable')
+const update = require('./updateTable')
 
 module.exports.init = () => {
     db.connect(err => {
@@ -31,28 +32,28 @@ module.exports.init = () => {
     ])
     .then(answer=>{
         if (answer.init === 'View all departments.'){
-            view.viewDepartments()
+            view.viewDepartments();
         }
         if (answer.init === 'View all roles.'){
-            view.viewRoles()
+            view.viewRoles();
          }
          if (answer.init === 'View all employees.'){
-            view.viewEmployees()
+            view.viewEmployees();
          }
          if (answer.init === 'Add a department.'){
-            add.addDepartment()
+            add.addDepartment();
          }
          if (answer.init === 'Add a role.'){
-            add.addRole()
+            add.addRole();
          }
          if (answer.init === 'Add an employee.'){
-            add.addEmployee()
+            add.addEmployee();
          }
          if (answer.init === 'Update an employee role.'){
-          
+            update.updateEmployee();
          }
          if (answer.init === 'Update an employee manager'){
-          
+            update.updateManager();
         }
         if (answer.init === 'View employees by department'){
           
