@@ -1,0 +1,24 @@
+{
+  "name": "lmw-log-my-workforce-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jesse-Lemieux/LMW-Log-My-Workforce-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jesse-Lemieux/LMW-Log-My-Workforce-/issues"
+  },
+  "homepage": "https://github.com/Jesse-Lemieux/LMW-Log-My-Workforce-#readme",
+  "dependencies": {
+    "inquirer": "^8.2.2",
+    "mysql2": "^2.3.3"
+  }
+}
