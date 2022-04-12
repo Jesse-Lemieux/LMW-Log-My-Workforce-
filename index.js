@@ -16,11 +16,7 @@ const init = () => {
                     'Add an employee.',
                     'Update an employee role.']
        }
-    ])}
-
-
-
-init()
+    ])
     .then(answer=>{
         if (answer = 'View all departments.'){
            return console.log('success')
@@ -44,3 +40,28 @@ init()
             return console.log('success')
          }
     })
+    .then(repeat)
+    .then(answer =>{
+        if(answer.repeat){
+            init()
+        }
+        else{
+        console.log('Goodbye')
+        process.exit()
+        }
+    })
+}
+
+const repeat = () => {
+    return inquirer
+    .prompt([
+        {
+            type:'confirm',
+            name: 'repeat',
+            message: 'Perform another action?',
+        }
+    ])
+}
+
+init();
+    
