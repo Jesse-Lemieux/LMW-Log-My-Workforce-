@@ -1,10 +1,10 @@
-INSERT INTO departments (department_name)
+INSERT INTO department (name)
 VALUES
     ('Sales'),
     ('IT'),
     ('Networking');
 
-INSERT INTO roles (title, salary, department_id)
+INSERT INTO role (title, salary, department_id)
 VALUES
     ('Sales Rep', 75000, 1),
     ('Sales Manager', 100000, 1),
@@ -16,21 +16,21 @@ VALUES
     ('Networking Assistant', 61000, 3),
     ('Networking Manager', 101000, 3);
 
-INSERT INTO employees (first_name, last_name, role_id)
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES
-    ('Jim', 'Fisher', 3),
-    ('Doug', 'Smith', 1),
-    ('Sally', 'Dixon', 1),
-    ('Greg', 'Davidson', 2),
-    ('Lucy', 'Kingston', 6),
-    ('Meghan', 'Lynn', 6),
-    ('Kim', 'Winder', 6),
-    ('Han', 'Cole', 7),
-    ('Rich', 'Quiggly', 7),
-    ('Tom', 'Shepard', 4),
-    ('Timothy', 'Cheng', 4),
-    ('David', 'Crowell', 5),
-    ('Wilfred', 'Diamond', 8),
-    ('Joseph', 'Jostar', 8),
-    ('Robert', 'Speedwagon', 8),
-    ('Ceaser', 'Zepoli', 9);
+    ('Jim', 'Fisher', 3, 4),
+    ('Doug', 'Smith', 1, 4),
+    ('Sally', 'Dixon', 1, 4),
+    ('Greg', 'Davidson', 2, NULL),
+    ('Lucy', 'Kingston', 6, 12),
+    ('Meghan', 'Lynn', 6, 12),
+    ('Kim', 'Winder', 6, 12),
+    ('Han', 'Cole', 7, 12),
+    ('Rich', 'Quiggly', 7, 12),
+    ('Tom', 'Shepard', 4, 12),
+    ('Timothy', 'Cheng', 4, 12),
+    ('David', 'Crowell', 5, NULL),
+    ('Wilfred', 'Diamond', 8, 16),
+    ('Joseph', 'Jostar', 8, 16),
+    ('Robert', 'Speedwagon', 8, 16),
+    ('Ceaser', 'Zepoli', 9, NULL);

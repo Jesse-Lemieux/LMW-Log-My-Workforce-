@@ -1,6 +1,7 @@
 const inquirer = require('inquirer')
 const db = require('../db/connection')
 const view = require('./viewTables')
+const add = require('./addTable')
 
 module.exports.init = () => {
     db.connect(err => {
@@ -33,7 +34,24 @@ module.exports.init = () => {
             view.viewEmployees()
          }
          if (answer.init === 'Add a department.'){
-            return console.log('success')
+            return inquirer.prompt([
+                {
+                    name: "name",
+                    type: "input",
+                    message: "What is the department name?",
+                    validate: nameInput => {
+                        if (nameInput) {
+                          return true;
+                        } else {
+                          console.log('You need to enter a department name!');
+                          return false;
+                        }
+                    }
+                }
+            ])
+            .then(answer=>{
+                add.addDepartment(answer)
+            })
          }
          if (answer.init === 'Add a role.'){
             return console.log('success')
