@@ -1,7 +1,9 @@
+//Global variables
 const connection = require('../db/connection')
 const inquirer = require('inquirer')
 const view = require('./viewTables')
 
+//__Add a new department__
 const addDepartment = () => {
     inquirer.prompt([
         {
@@ -30,6 +32,8 @@ const addDepartment = () => {
       });
 }
 
+
+//__Add a new role__
 const addRole = () => {
     inquirer.prompt([
         {
@@ -50,7 +54,7 @@ const addRole = () => {
           name: 'salary',
           message: "What is the salary of this role?",
           validate: addSalary => {
-            if (isNAN(addSalary)) {
+            if (addSalary) {
                 return true;
             } else {
                 console.log('Please enter a salary');
@@ -96,6 +100,7 @@ const addRole = () => {
      });
 }
 
+//__Add a new employee__
 const addEmployee = () => {
     inquirer.prompt([
         {

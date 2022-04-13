@@ -1,7 +1,9 @@
+//global vairables
 const connection = require('../db/connection')
 const inquirer = require('inquirer')
 const view = require('./viewTables')
 
+//__Delete a department__
 const deleteDepartment = () => {
     const deptSql = `SELECT * FROM department`; 
   
@@ -32,6 +34,7 @@ const deleteDepartment = () => {
     });
   };
 
+//__Delete a role__
 const deleteRole = () => {
     const roleSql = `SELECT * FROM role`; 
   
@@ -62,6 +65,7 @@ const deleteRole = () => {
     });
   };
 
+//__Delete an employee__
 const deleteEmployee = () => {
     // get employees from employee table 
     const employeeSql = `SELECT * FROM employee`;

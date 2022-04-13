@@ -1,3 +1,5 @@
+//Export a connection to mysql to be used in all of our functions
+
 const mysql = require('mysql2');
 const connection = mysql.createConnection(
     {

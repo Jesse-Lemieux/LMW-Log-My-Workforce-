@@ -1,7 +1,10 @@
+//global variables
+
 const connection = require('../db/connection')
 const inquirer = require('inquirer')
 const view = require('./viewTables')
 
+//__Update an employee's role__
 const updateEmployee = () => {
     // get employees from employee table 
     const employeeSql = `SELECT * FROM employee`;
@@ -64,6 +67,7 @@ const updateEmployee = () => {
     });
   };
 
+  //__Update an employee's manager__
 const updateManager = () => {
     // get employees from employee table 
     const employeeSql = `SELECT * FROM employee`;

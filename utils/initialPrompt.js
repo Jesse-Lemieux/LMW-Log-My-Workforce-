@@ -1,3 +1,4 @@
+//Global Variables
 const inquirer = require('inquirer')
 const db = require('../db/connection')
 const view = require('./viewTables')
@@ -5,6 +6,7 @@ const add = require('./addTable')
 const update = require('./updateTable')
 const deleteFunc = require('./delete')
 
+//__Function to initiate user prompt and export it so it can be called back in other functions__
 module.exports.init = () => {
     db.connect(err => {
         if (err) throw err;
@@ -31,6 +33,7 @@ module.exports.init = () => {
                     'Exit']
        }
     ])
+    //Calls to all exported functions based on user input
     .then(answer=>{
         if (answer.init === 'View all departments.'){
             view.viewDepartments();
@@ -69,7 +72,7 @@ module.exports.init = () => {
             deleteFunc.deleteEmployee();
         }
         if (answer.init === 'View department budgets'){
-          
+            view.viewBudget();
         }
          if (answer.init === 'Exit'){
             console.log('Goodbye')
